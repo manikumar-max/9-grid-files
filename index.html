@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #1a1b26;
+        }
+        .parent {
+            width: 85.5vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            padding: 15px;
+            background-color: rgb(241, 241, 241);
+            margin: auto;
+        }
+        .child-1 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-1 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-1 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-1 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            gap: 10px;
+        }
+        .box-1 {
+            border-radius: 4px;
+        }
+        #one-1 {background-color: rgb(255, 105, 97);}
+        #two-1 {background-color: rgb(255, 105, 97);}
+        #three-1 {background-color: rgb(255, 159, 94);}
+        #four-1 {background-color: rgb(0, 155, 135);}
+        #five-1 {background-color: rgb(53, 215, 185);}
+        #six-1 {background-color: rgb(64, 224, 208);}
+        .child-2 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-2 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-2 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-2 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 0.8fr;
+            justify-content: center;
+            gap: 10px;
+        }
+        .box-2 {
+            border-radius: 4px;
+        }
+        #one-2 {background-color: rgb(255, 105, 97); grid-column: 1/3;}
+        #two-2 {background-color: rgb(255, 159, 94);grid-row: 1/3; grid-column: 3/4;}
+        #three-2 {background-color: rgb(0, 155, 135);}
+        #four-2 {background-color: rgb(53, 215, 185);}
+        .child-3 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-3 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-3 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-3 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr) 0.8fr;
+            justify-content: center;
+            gap: 7px;
+        }
+        #one-3 {background-color: rgb(255, 159, 94); grid-column: 1/5;}
+        #two-3 {background-color: rgb(0, 155, 135); grid-row: 2/4;}
+        #three-3 {background-color: rgb(255, 105, 97);grid-column: 2/5; grid-row: 2/4;}
+        #four-3 {background-color: rgb(53, 215, 185);grid-column: 1/5;}
+        .child-4 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-4 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-4 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-4 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 3fr;
+            grid-template-rows: 2fr 3fr 1fr;
+            justify-content: center;
+            gap: 7px;
+        }
+        #one-4 {background-color: rgb(255, 159, 94); grid-column: 1/3;}
+        #two-4 {background-color: rgb(255, 105, 97); grid-column: 3/4;}
+        #three-4 {background-color: rgb(0, 155, 135);}
+        #four-4 {background-color: rgb(53, 215, 185); grid-column: 2/4;}
+        #five-4 {background-color: rgb(255, 159, 94); grid-column: 1/4;}
+        .child-5 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-5 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-5 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-5 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-content: center;
+            gap: 10px;
+        }
+        .box-5 {
+            border-radius: 4px;
+        }
+        #one-5 {background-color: rgb(0, 155, 135);}
+        #two-5 {background-color: rgb(255, 159, 94);}
+        #three-5 {background-color: rgb(53, 215, 185);}
+        #four-5 {background-color: rgb(255, 105, 97);}
+        #five-5 {background-color: rgb(64, 224, 208);}
+        #six-5 {background-color: rgb(255, 105, 97);}
+        #seven-5 {background-color: rgb(255, 159, 94);}
+        #eight-5 {background-color: rgb(0, 155, 135);}
+        #nine-5 {background-color: rgb(255, 105, 97);}
+        #ten-5 {background-color: rgb(53, 215, 185);}
+        #eleven-5 {background-color: rgb(255, 159, 94);}
+        #twelve-5 {background-color: rgb(255, 105, 97);}
+        #thirteen-5 {background-color: rgb(0, 155, 135);}
+        #fourteen-5 {background-color: rgb(255, 105, 97);}
+        #fifteen-5 {background-color: rgb(64, 224, 208);}
+        #sixteen-5 {background-color: rgb(255, 159, 94);}
+        #seventeen-5 {background-color: rgb(0, 155, 135);}
+        #eighteen-5 {background-color: rgb(53, 215, 185);}
+        .child-6 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-6 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-6 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-6 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            justify-content: center;
+            gap: 5px;
+        }
+        #one-6 {background-color: rgb(255, 105, 97); grid-column: 1/3;}
+        #two-6 {background-color: rgb(0, 155, 135); grid-column: 3/4;}
+        #three-6 {background-color: rgb(255, 159, 94); grid-column: 4/5;}
+        #four-6 {background-color: rgb(255, 105, 97); grid-column: 1/2; grid-row: 2/3;}
+        #five-6 {background-color: rgb(0, 155, 135); grid-column: 2/3; grid-row: 2/3;}
+        #six-6 {background-color: rgb(53, 215, 185); grid-column: 3/4; grid-row: 2/3;}
+        #seven-6 {grid-column: 4/5; grid-row: 2/3;}
+        #eight-6 {background-color: rgb(255, 159, 94); grid-row: 3/5; grid-column: 1/3;}
+        #nine-6 {background-color: rgb(64, 224, 208);}
+        #ten-6 {background-color: rgb(255, 105, 97);}
+        #eleven-6 {background-color: rgb(0, 155, 135);}
+        #twelve-6 {grid-column: 4/5;}
+        #thirteen-6 {background-color: rgb(53, 215, 185); grid-column: 1/4;}
+        #fourteen-6 {background-color: rgb(255, 159, 94);}
+        .child-7 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-7 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-7 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-7 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 3fr;
+            justify-content: center;
+            gap: 7px;
+        }
+        .box-7 {
+            border-radius: 2px;
+        }
+        #one-7 {background-color: rgb(255, 159, 94);}
+        #two-7 {background-color: rgb(0, 155, 135);}
+        #three-7 {background-color: rgb(255, 105, 97);}
+        #four-7 {background-color: rgb(53, 215, 185); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; padding: 7px; gap: 7px;}
+        #four-71 {background-color: rgb(210, 237, 234); grid-column: 1/3; border-radius: 4px;}
+        #four-72 {background-color: rgb(0, 155, 135); border-radius: 4px;}
+        #four-73 {background-color: rgb(255, 159, 94); border-radius: 4px;}
+        .child-8 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-8 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-8 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-8 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr 1fr 0.9fr;
+            justify-content: center;
+            gap: 10px;
+        }
+        .box-8 {
+            border-radius: 2px;
+        }
+        #one-8 {background-color: rgb(255, 105, 97);}
+        #two-8 {background-color: rgb(255, 159, 94);}
+        #three-8 {background-color: rgb(53, 215, 185);}
+        #four-8 {background-color: rgb(64, 224, 208);}
+        #five-8 {background-color: rgb(0, 155, 135);}
+        #six-8 {background-color: rgb(255, 159, 94);}
+        #seven-8 {background-color: rgb(255, 105, 97);}
+        #eight-8 {background-color: rgb(255, 159, 94); grid-column: 3/6;}
+        #nine-8 {background-color: rgb(53, 215, 185); grid-column: 1/6;}
+        .child-9 {
+            width: 100%;
+            height: 100%;
+        }
+        .parent-9 {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(42, 43, 62);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        .parent1-9 {
+            height: 8%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parent2-9 {
+            height: 80%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1.5fr);
+            grid-template-rows: 0.8fr 1fr 1fr;
+            justify-content: center;
+            gap: 10px;
+        }
+        .box-9 {
+            border-radius: 2px;
+        }
+        #one-9 {background-color: rgb(255, 159, 94); grid-column: 1/4;}
+        #two-9 {background-color: rgb(0, 155, 135); grid-row: 2/4;}
+        #three-9 {background-color: rgb(53, 215, 185); grid-column: 2/4;}
+        #four-9 {background-color: rgb(255, 105, 97);}
+        #five-9 {background-color: rgb(255, 159, 94);}
+        .nav1 { height: 100%; width: 3.5%; background-color: rgb(255, 105, 97); border-radius: 50%; }
+        .nav2 { height:100%; width: 3.5%; background-color: rgb(255, 127, 80); border-radius: 50%; }
+        .nav3 { height:100%; width: 3.5%; background-color: rgb(72, 209, 204); border-radius: 50%; }
+        .nav4 { height:100%; width: 85%; background-color: white; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child-1">
+            <div class="parent-1">
+                <div class="parent1-1">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-1">
+                    <div class="box-1" id="one-1"></div>
+                    <div class="box-1" id="two-1"></div>
+                    <div class="box-1" id="three-1"></div>
+                    <div class="box-1" id="four-1"></div>
+                    <div class="box-1" id="five-1"></div>
+                    <div class="box-1" id="six-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-2">
+            <div class="parent-2">
+                <div class="parent1-2">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-2">
+                    <div class="box-2" id="one-2"></div>
+                    <div class="box-2" id="two-2"></div>
+                    <div class="box-2" id="three-2"></div>
+                    <div class="box-2" id="four-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-3">
+            <div class="parent-3">
+                <div class="parent1-3">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-3">
+                    <div class="box-3" id="one-3"></div>
+                    <div class="box-3" id="two-3"></div>
+                    <div class="box-3" id="three-3"></div>
+                    <div class="box-3" id="four-3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-4">
+            <div class="parent-4">
+                <div class="parent1-4">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-4">
+                    <div class="box-4" id="one-4"></div>
+                    <div class="box-4" id="two-4"></div>
+                    <div class="box-4" id="three-4"></div>
+                    <div class="box-4" id="four-4"></div>
+                    <div class="box-4" id="five-4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-5">
+            <div class="parent-5">
+                <div class="parent1-5">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-5">
+                    <div class="box-5" id="one-5"></div>
+                    <div class="box-5" id="two-5"></div>
+                    <div class="box-5" id="three-5"></div>
+                    <div class="box-5" id="four-5"></div>
+                    <div class="box-5" id="five-5"></div>
+                    <div class="box-5" id="six-5"></div>
+                    <div class="box-5" id="seven-5"></div>
+                    <div class="box-5" id="eight-5"></div>
+                    <div class="box-5" id="nine-5"></div>
+                    <div class="box-5" id="ten-5"></div>
+                    <div class="box-5" id="eleven-5"></div>
+                    <div class="box-5" id="twelve-5"></div>
+                    <div class="box-5" id="thirteen-5"></div>
+                    <div class="box-5" id="fourteen-5"></div>
+                    <div class="box-5" id="fifteen-5"></div>
+                    <div class="box-5" id="sixteen-5"></div>
+                    <div class="box-5" id="seventeen-5"></div>
+                    <div class="box-5" id="eighteen-5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-6">
+            <div class="parent-6">
+                <div class="parent1-6">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-6">
+                    <div class="box-6" id="one-6"></div>
+                    <div class="box-6" id="two-6"></div>
+                    <div class="box-6" id="three-6"></div>
+                    <div class="box-6" id="four-6"></div>
+                    <div class="box-6" id="five-6"></div>
+                    <div class="box-6" id="six-6"></div>
+                    <div class="box-6" id="seven-6"></div>
+                    <div class="box-6" id="eight-6"></div>
+                    <div class="box-6" id="nine-6"></div>
+                    <div class="box-6" id="ten-6"></div>
+                    <div class="box-6" id="eleven-6"></div>
+                    <div class="box-6" id="twelve-6"></div>
+                    <div class="box-6" id="thirteen-6"></div>
+                    <div class="box-6" id="fourteen-6"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-7">
+            <div class="parent-7">
+                <div class="parent1-7">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-7">
+                    <div class="box-7" id="one-7"></div>
+                    <div class="box-7" id="two-7"></div>
+                    <div class="box-7" id="three-7"></div>
+                    <div class="box-7" id="four-7">
+                        <div id="four-71"></div>
+                        <div id="four-72"></div>
+                        <div id="four-73"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="child-8">
+            <div class="parent-8">
+                <div class="parent1-8">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-8">
+                    <div class="box-8" id="one-8"></div>
+                    <div class="box-8" id="two-8"></div>
+                    <div class="box-8" id="three-8"></div>
+                    <div class="box-8" id="four-8"></div>
+                    <div class="box-8" id="five-8"></div>
+                    <div class="box-8" id="six-8"></div>
+                    <div class="box-8" id="seven-8"></div>
+                    <div class="box-8" id="eight-8"></div>
+                    <div class="box-8" id="nine-8"></div>
+                </div>
+            </div>
+        </div>
+        <div class="child-9">
+            <div class="parent-9"> 
+                <div class="parent1-9">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+                    <div class="nav4"></div>
+                </div>
+                <div class="parent2-9">
+                    <div class="box-9" id="one-9"></div>
+                    <div class="box-9" id="two-9"></div>
+                    <div class="box-9" id="three-9"></div>
+                    <div class="box-9" id="four-9"></div>
+                    <div class="box-9" id="five-9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
