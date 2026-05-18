@@ -14,16 +14,20 @@
             background-color: #1a1b26;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .parent {
             width: 85.5vw;
-            height: 100vh;
+            height: 90vh;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 15px;
             padding: 15px;
             background-color: rgb(241, 241, 241);
+            border-radius: 12px;
+            
         }
         .child-1 {
             width: 100%;
@@ -396,6 +400,22 @@
         .nav2 { height:100%; width: 3.5%; background-color: rgb(255, 127, 80); border-radius: 50%; }
         .nav3 { height:100%; width: 3.5%; background-color: rgb(72, 209, 204); border-radius: 50%; }
         .nav4 { height:100%; width: 85%; background-color: white; border-radius: 6px; }
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 20px 0;
+            }
+
+            .parent {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+                width: 92vw;
+                gap: 20px;
+            }
+            .child-1, .child-2, .child-3, .child-4, .child-5, .child-6, .child-7, .child-8, .child-9 {
+                height: 340px;
+            }
     </style>
 </head>
 <body>
